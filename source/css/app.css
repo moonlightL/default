@@ -78,8 +78,9 @@
     --shadow-hover-color: #d0cfcf;
     --gutter-pre-bg-color: #eff2f3;
     --code-pre-bg-color: #f7f7f7;
-    --text-shadow-color: #e1dfdf;
+    --text-shadow-color: #cfcfd0;
     --table-border-color: #ddd;
+    --archive-bg-color: #f5f5f5;
     --hr-color: #ddd;
     --brightness-value: brightness(1);
 }
@@ -98,6 +99,7 @@
     --code-pre-bg-color: #1d1f21;
     --text-shadow-color: #505050;
     --table-border-color: #5d5c5c;
+    --archive-bg-color: #2c2c2c;
     --hr-color: #ddd;
     --brightness-value: brightness(0.9);
 }
@@ -1029,6 +1031,11 @@ span.effect {
     color: var(--text-color);
 }
 
+.footer-copyright > div {
+    flex: 1;
+    text-align: center;
+}
+
 .footer-copyright a {
     display: inline-block;
     color: #6c757d;
@@ -1063,6 +1070,12 @@ span.effect {
 
 .archives .archives-item {
     padding: 1rem 0;
+    background: var(--archive-bg-color);
+    margin-bottom: 1rem;
+}
+
+.archives .archives-item:hover {
+    background: var(--text-shadow-color);
 }
 
 .archives a {
@@ -1075,10 +1088,6 @@ span.effect {
     text-decoration:none;
     font-size: 15px;
     transition: all .3s;
-}
-
-.archives a:hover {
-    transform: translateX(10px);
 }
 
 .archives span.title {
@@ -1324,6 +1333,7 @@ h3.friend-link-title {
     position: relative;
     margin: 1.5rem auto;
     height: 100%;
+    box-shadow: 0 1px 3px 1px var(--shadow-color);
 }
 
 .album-detail-item a .mask {
@@ -1346,6 +1356,14 @@ h3.friend-link-title {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.album-detail-item .name {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 1rem 0;
 }
 
 .video-mask {
@@ -1786,6 +1804,11 @@ h3.friend-link-title {
     opacity: 1;
     top:-3px;
     left: 140px;
+}
+
+.reward-img-area {
+    display: block;
+    animation: slowDown 1s;
 }
 
 .alert-info {
@@ -2324,11 +2347,6 @@ html[mode=dark] .hb-w-body .hb-comment-content textarea {
 
 html[mode=dark] .hb-w-body .hb-comment-info input {
     border: 1px solid #4a4a4a;
-}
-
-html[mode=dark] .hb-w-body .hb-w-body-item,
-html[mode=dark] .hb-r-body .hb-r-body-item {
-    border-bottom: 1px solid #4a4a4a;
 }
 
 html[mode=dark] .hb-w-body .hb-comment-help .emoji-panel .emoji-tab:hover,

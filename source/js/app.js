@@ -72,7 +72,7 @@
 
         $("#modal-iframe").iziModal({
             iframe: true,
-            headerColor: "rgb(76, 175, 80)",
+            headerColor: "rgb(143,171,187)",
             title: '<i class="fa fa-search"></i> 站内搜索' ,
             width: 620,
             iframeHeight: 360,
@@ -217,13 +217,7 @@
             // 打赏
             $("#showRewardImg").on("click", function () {
                 let rewardImgArea = $("#rewardImgArea");
-                if (rewardImgArea.hasClass("hide")) {
-                    rewardImgArea.removeClass("hide");
-                    rewardImgArea.slideDown("slow");
-                } else {
-                    rewardImgArea.addClass("hide");
-                    rewardImgArea.slideUp("slow");
-                }
+                rewardImgArea.toggleClass("hide");
             });
 
             // 分享
@@ -291,7 +285,7 @@
         contentWayPoint();
         dynamicEvent();
         postEvent();
-        if (openPjax === "true") {
+        if (openPJAX === "true") {
             pjaxEvent();
         }
         loadResource();
