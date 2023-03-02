@@ -1,10 +1,18 @@
 /*@font-face{*/
-/*    font-family:'Play';*/
+/*    font-family:HarmonyOS_Sans_SC_Medium;*/
 /*    font-style:normal;*/
-/*    font-weight:400;*/
-/*    src:url('../fonts/Play.woff2') format('woff2');*/
-/*    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215*/
+/*    font-display:swap;*/
+/*    src:url(https://cdn.jsdelivr.net/gh/irozhi/HarmonyOS-Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.subset.woff2) format('woff2');*/
+/*    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;*/
 /*}*/
+
+@font-face{
+    font-family:'Play';
+    font-style:normal;
+    font-weight:400;
+    src:url('../fonts/Play.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215
+}
 
 @keyframes slowUp {
     0% {
@@ -128,15 +136,13 @@ body::-webkit-scrollbar {
     width:8px;
     height:0;
     background:#ccc;
-    border-radius:10px;
 }
 
 body::-webkit-scrollbar-thumb {
     display: block;
     width: 8px;
     margin: 0 auto;
-    border-radius: 10px;
-    background: #aaa;
+    background: var(--theme-color);
 }
 
 ::selection {
@@ -159,6 +165,11 @@ a {
 a:focus, a:hover {
     color: var(--hover-color);
     text-decoration: underline;
+}
+
+.btn {
+    border-radius: 0!important;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 button.btn.focus, button.btn:focus {
@@ -228,10 +239,7 @@ h6 {
 
 ul {
     margin: 0;
-    padding: 0;
-}
-ul li {
-    list-style-type: none;
+    padding: 0 2rem;
 }
 
 .btn-primary {
@@ -318,11 +326,9 @@ ul li {
 
 .navbar {
     background-color: var(--content-color);
-    border: 2px solid var(--content-color);
     border-radius: 0;
     font-weight: bold;
-    box-shadow: 0 0 5px var(--shadow-color);
-    padding: 0 1rem;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     font-size: 14px;
 }
 
@@ -406,7 +412,7 @@ ul li {
 
 .image-banner {
     position: relative;
-    box-shadow: 0 0 36px var(--shadow-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     margin-bottom: 22px;
 }
 
@@ -479,10 +485,11 @@ ul li {
 
 .ml-content {
     position: relative;
-    background-color: var(--content-color);
-    padding: 2em;
+    /*background-color: var(--content-color);*/
+    /*padding: 2em;*/
     margin-bottom: 1em;
-    box-shadow: 0 1px 14px 1px var(--shadow-color);
+    /*box-shadow: 0 1px 14px 1px var(--shadow-color);*/
+    /*box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);*/
 }
 
 .ml-content-title {
@@ -498,7 +505,7 @@ ul li {
     max-height: 400px;
     background: var(--content-color);
     margin-bottom: 22px;
-    box-shadow: 0 1px 14px 1px var(--shadow-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .post-info .post-bg {
@@ -509,7 +516,6 @@ ul li {
     width: 100%;
     height: 215px;
     overflow: hidden;
-    border-radius: 4px 4px 0 0;
 }
 
 .post-info .post-bg:hover i {
@@ -520,10 +526,6 @@ ul li {
     object-fit: cover;
     transition: all .5s;
     height: 215px;
-}
-
-.post-info .post-bg > img {
-    transform: scale(1.1);
 }
 
 .post-info .post-bg .top {
@@ -843,9 +845,9 @@ ul li {
 .post-info.full {
     display: flex;
     margin-bottom: 0;
-    padding-bottom: 2rem;
+    padding: 2rem;
     box-shadow: none;
-    border-bottom: 1px solid var(--table-border-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .post-info.full .cover {
@@ -949,8 +951,10 @@ ul li {
     padding: .75rem;
     position: relative;
     transition: all .5s;
-    box-shadow: 0 1px 6px 1px var(--shadow-color);
+    background: var(--content-color);
     color: var(--text-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    border-radius: 50%;
 }
 
 @media (max-width: 767px) {
@@ -958,7 +962,7 @@ ul li {
         width: 36px;
         height: 36px;
         line-height: 22px;
-        margin: 0 .25rem
+        margin: .25rem
     }
 }
 
@@ -969,12 +973,9 @@ ul li {
     height: 100%;
 }
 
-.pagination .page:hover, .pagination span.current  {
+.pagination .page:hover,
+.pagination .page.current {
     background: var(--theme-color);
-    color: var(--hover-color);
-}
-
-.pagination .page:hover a {
     color: var(--hover-color);
 }
 
@@ -989,7 +990,7 @@ ul li {
     background-color: var(--content-color);
     cursor: pointer;
     transition: all .3s;
-    box-shadow: 0 0 10px 1px var(--shadow-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     color: var(--text-color);
     z-index: 999;
     filter: var(--brightness-value);
@@ -1027,7 +1028,7 @@ span.effect {
     letter-spacing: 0;
     background-color: var(--content-color);
     border: 2px solid var(--content-color);
-    box-shadow: 0 0 5px var(--shadow-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     color: var(--text-color);
 }
 
@@ -1061,6 +1062,12 @@ span.effect {
 
 /** 归档 start **/
 
+.archive-content {
+    background: var(--content-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
 .archive-content h3 {
     padding-bottom: 10px;
     position: relative;
@@ -1070,12 +1077,16 @@ span.effect {
 
 .archives .archives-item {
     padding: 1rem 0;
-    background: var(--archive-bg-color);
     margin-bottom: 1rem;
 }
 
 .archives .archives-item:hover {
-    background: var(--text-shadow-color);
+    background: var(--theme-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+}
+
+.archives .archives-item:hover a {
+    color: #FFF;
 }
 
 .archives a {
@@ -1087,7 +1098,6 @@ span.effect {
     font-style: normal;
     text-decoration:none;
     font-size: 15px;
-    transition: all .3s;
 }
 
 .archives span.title {
@@ -1103,8 +1113,8 @@ span.effect {
     background-size: cover;
     margin-bottom: 2em;
     transition: all .3s;
-    box-shadow: 0 0 5px var(--shadow-color);
-    border-radius: 4px;
+    background: var(--content-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .category-item:hover {
@@ -1155,15 +1165,15 @@ span.effect {
 /** 标签 start **/
 
 .tags-content {
-    margin-top: 2rem;
-    animation: slowUp 1s;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--content-color);
 }
 
 .tags-content a {
     display: inline-block;
     margin: .625rem;
-    padding: .5rem .625rem;
-    border-radius: 4px;
+    padding: .5rem 1rem;
 }
 
 .tags-content a:hover {
@@ -1176,30 +1186,21 @@ span.effect {
 /** 友链 start  */
 
 h3.friend-link-title {
-    /*padding: 1.5rem;*/
     font-size: 18px;
     border-radius: 4px;
     text-shadow: none;
+    color: var(--text-color);
 }
-
-/*h3.friend-link-title.tool {*/
-/*    border-left: 3px solid #428bca;*/
-/*    background: #eef7fa;*/
-/*}*/
-
-/*h3.friend-link-title.blogger {*/
-/*    border-left: 3px solid #f0ad4e;*/
-/*    background: #fdf8ea;*/
-/*}*/
 
 .friend-link-item {
     position: relative;
     width: 100%;
+    height: 86px;
     margin: 1rem 0;
     padding: 1.4rem 1rem;
     transition: all .3s;
-    border-radius: 4px;
-    box-shadow: 0 1px 7px 1px var(--shadow-color);
+    background: var(--content-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .friend-link-item:hover {
@@ -1252,9 +1253,9 @@ h3.friend-link-title {
 
 .dynamic-item {
     color: var(--text-color);
-    box-shadow: 0 0 5px var(--shadow-color);
+    background: var(--content-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     margin-bottom: 2rem;
-    border-radius: 4px;
     box-sizing: border-box;
     border: 2px solid transparent;
 }
@@ -1306,8 +1307,8 @@ h3.friend-link-title {
     background-size: cover;
     margin-bottom: 2em;
     transition: all .3s;
-    box-shadow: 0 0 5px var(--shadow-color);
-    border-radius: 4px;
+    background: var(--content-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     padding: 1rem;
 }
 
@@ -1333,7 +1334,8 @@ h3.friend-link-title {
     position: relative;
     margin: 1.5rem auto;
     height: 100%;
-    box-shadow: 0 1px 3px 1px var(--shadow-color);
+    background: var(--content-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .album-detail-item a .mask {
@@ -1404,6 +1406,12 @@ h3.friend-link-title {
 
 /** 文章页 start */
 
+.postContainer {
+    background-color: var(--content-color);
+    padding: 2rem;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+}
+
 .tocContainer {
     position: absolute;
     top:180px;
@@ -1423,7 +1431,6 @@ h3.friend-link-title {
     text-align: left;
     font-size: 14px;
     width: 100%;
-    background-color: var(--content-color);
     color: var(--text-color);
     margin-bottom: 2rem;
     animation: slowUp 1s;
@@ -1431,50 +1438,6 @@ h3.friend-link-title {
 
 .post-content div {
     margin: 2rem 0;
-}
-
-.post-content ol {
-    padding: 0;
-    list-style-type: none;
-}
-
-.post-content ol li::before {
-    content: counter(list-item);
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    float: left;
-    margin: 5px 12px 0 0;
-    color: #fff;
-    font-size: 12px;
-    font-style: normal;
-    background-color: #5aaefd;
-    border-radius: 50%;
-    text-align: center;
-    transition: all .5s;
-}
-
-.post-content ol li:hover::before {
-    transform: scale(1.1);
-}
-
-.post-content ul li::before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    float: left;
-    margin: 8px 12px 0 0;
-    color: #fff;
-    font-size: 12px;
-    font-style: normal;
-    border: 2px solid #5aaefd;
-    border-radius: 50%;
-    text-align: center;
-    transition: all .5s;
-}
-
-.post-content ul li:hover::before {
-    background-color: #5aaefd;
 }
 
 .post-content img {
@@ -1486,6 +1449,7 @@ h3.friend-link-title {
 
 .post-content >  table {
     border: 1px solid var(--table-border-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .post-content > table th,
@@ -1579,9 +1543,9 @@ h3.friend-link-title {
 }
 
 .postContainer .highlight {
-    border-radius: 1px;
-    font-family: "Nunito Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: "Play";
     background-color: var(--code-pre-bg-color);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .postContainer .highlight table {
@@ -1816,7 +1780,7 @@ h3.friend-link-title {
     border: none;
     color: var(--text-color) !important;
     border-radius: 4px;
-    border-left: 3px solid #f98b43;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
 }
 
 .alert-info .alert-link {
@@ -2325,6 +2289,18 @@ h3.friend-link-title {
 }
 
 /** 评论区 start **/
+
+.hb-comment .hb-w,
+.hb-r-body .hb-r-body-box,
+.hb-comment .hb-r .hb-r-head {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+}
+
+html[mode=dark] .hb-comment .hb-w,
+html[mode=dark] .hb-r-body .hb-r-body-box,
+html[mode=dark] .hb-comment .hb-r .hb-r-head {
+    background-color: #000;
+}
 
 html[mode=dark] .hb-comment {
     color: #aaa;
